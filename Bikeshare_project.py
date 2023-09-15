@@ -44,7 +44,7 @@ def city(df1, df2, df3):
     while True:
         city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
-            print("Try again!")
+            print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             print("looks like you want to learn about ", city)
             break
@@ -120,7 +120,7 @@ def time_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
-            print("Enter Chicago, New York City, or Washington \n Try again!")
+            print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
     if city == "Chicago":
@@ -145,7 +145,7 @@ def station_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
-            print("Enter Chicago, New York City, or Washington \n Try again!")
+            print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
     if city == "Chicago":
@@ -170,7 +170,7 @@ def trip_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
-            print("Enter Chicago, New York City, or Washington \n Try again!")
+            print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
     if city == "Chicago":
@@ -234,7 +234,7 @@ def user_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
-            print("Enter Chicago, New York City, or Washington \n Try again!")
+            print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
     if city == "Chicago":
