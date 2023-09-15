@@ -38,30 +38,30 @@ df3['Hour'] = df3['Start Time'].dt.hour
 # function for city statistics
 def city(df1, df2, df3):
     #creating user interaction
-    name = str(input("Please enter your name: ")).title()
+    name = str(input("Please enter your name: ")).lower()
     print("\U0001f600", f"Welcome {name} lets explore bikeshare data")
 
     while True:
-        city = str(input("Please enter the city name : ")).title()
+        city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
             print("Try again!")
         else:
             print("looks like you want to learn about ", city)
             break
     while True:
-        month = str(input("What month would you like to explore? ")).title()
+        month = str(input("What month would you like to explore? ")).lower()
         if month not in ("January", "February", "March", "April", "May", "June"):
             print("we only have six months of data, January - June \n Try again!")
         else:
             break
     while True:
-        day = str(input("what day? ")).title()
+        day = str(input("what day? ")).lower()
         if day not in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"):
             print("Enter day in words \n Try again!")
         else:
             break
 
-    n = 5
+    n = int(input("How many rows of data do you wish to see? "))
 
     if city == "Chicago":
         print("\U0001f600", "okay, let us explore", city)
@@ -71,7 +71,7 @@ def city(df1, df2, df3):
         print(df1.head(n))
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).title()
+            more = str(input("would like to see more data? ")).lower()
             n += 5
             if more == "Yes":
                 print(df1.head(n))
@@ -89,7 +89,7 @@ def city(df1, df2, df3):
         print(df2.head(n))
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).title()
+            more = str(input("would like to see more data? ")).lower()
             n += 5
             if more == "Yes":
                 print(df2.head(n))
@@ -105,7 +105,7 @@ def city(df1, df2, df3):
         print(df3.head())
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).title()
+            more = str(input("would like to see more data? ")).lower()
             n += 5
             if more == "Yes":
                 print(df3.head(n))
@@ -118,7 +118,7 @@ city(df1, df2, df3)
 # function for time statistics
 def time_stats():
     while True:
-        city = str(input("Please enter the city name : ")).title()
+        city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
             print("Enter Chicago, New York City, or Washington \n Try again!")
         else:
@@ -143,7 +143,7 @@ time_stats()
 # function for station statistics
 def station_stats():
     while True:
-        city = str(input("Please enter the city name : ")).title()
+        city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
             print("Enter Chicago, New York City, or Washington \n Try again!")
         else:
@@ -168,7 +168,7 @@ station_stats()
 # function for trip statistics
 def trip_stats():
     while True:
-        city = str(input("Please enter the city name : ")).title()
+        city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
             print("Enter Chicago, New York City, or Washington \n Try again!")
         else:
@@ -232,7 +232,7 @@ trip_stats()
 # function for user statistics
 def user_stats():
     while True:
-        city = str(input("Please enter the city name : ")).title()
+        city = str(input("Please enter the city name : ")).lower()
         if city not in ("Chicago", "New York City", "Washington"):
             print("Enter Chicago, New York City, or Washington \n Try again!")
         else:
