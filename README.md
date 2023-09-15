@@ -17,3 +17,6 @@ washington.csv
 
 ### Credits
 This project is part of udacity programming for data science course.
+
+### Project user expirence
+This project is designed to be user friendly and interactive.
