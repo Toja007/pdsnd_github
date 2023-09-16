@@ -43,19 +43,19 @@ def city(df1, df2, df3):
 
     while True:
         city = str(input("Please enter the city name : ")).lower()
-        if city not in ("Chicago", "New York City", "Washington"):
+        if city not in ("chicago", "new york city", "washington"):
             print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             print("looks like you want to learn about ", city)
             break
     while True:
-        month = str(input("What month would you like to explore? ")).lower()
+        month = str(input("What month would you like to explore? ")).title()
         if month not in ("January", "February", "March", "April", "May", "June"):
             print("we only have six months of data, January - June \n Try again!")
         else:
             break
     while True:
-        day = str(input("what day? ")).lower()
+        day = str(input("what day? ")).title()
         if day not in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"):
             print("Enter day in words \n Try again!")
         else:
@@ -63,7 +63,7 @@ def city(df1, df2, df3):
 
     n = int(input("How many rows of data do you wish to see? "))
 
-    if city == "Chicago":
+    if city == "chicago":
         print("\U0001f600", "okay, let us explore", city)
         mask_month = df1['month'] == month
         mask_day = df1['day'] == day
@@ -71,7 +71,7 @@ def city(df1, df2, df3):
         print(df1.head(n))
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).lower()
+            more = str(input("would like to see more data? ")).title()
             n += 5
             if more == "Yes":
                 print(df1.head(n))
@@ -81,7 +81,7 @@ def city(df1, df2, df3):
 
 
 
-    elif city == "New York City":
+    elif city == "new york city":
         print("\U0001f600", "okay, let us explore", city)
         mask_month = df2['month'] == month
         mask_day = df2['day'] == day
@@ -89,7 +89,7 @@ def city(df1, df2, df3):
         print(df2.head(n))
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).lower()
+            more = str(input("would like to see more data? ")).title()
             n += 5
             if more == "Yes":
                 print(df2.head(n))
@@ -97,7 +97,7 @@ def city(df1, df2, df3):
                 print("Alright!")
                 break
 
-    elif city == "Washington":
+    elif city == "washington":
         print("\U0001f600", "okay, let us explore", city)
         mask_month = df3['month'] == month
         mask_day = df3['day'] == day
@@ -105,7 +105,7 @@ def city(df1, df2, df3):
         print(df3.head())
         print("Enter yes for more and no to skip ")
         while True:
-            more = str(input("would like to see more data? ")).lower()
+            more = str(input("would like to see more data? ")).title()
             n += 5
             if more == "Yes":
                 print(df3.head(n))
@@ -119,21 +119,21 @@ city(df1, df2, df3)
 def time_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
-        if city not in ("Chicago", "New York City", "Washington"):
+        if city not in ("chicago", "new york city", "washington"):
             print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
-    if city == "Chicago":
+    if city == "chicago":
         print(f"The most common month is: ", df1["month"].mode()[0])
         print(f"The most common day is: ", df1["day"].mode()[0])
         print(f"The most comon hour is: ", df1["Hour"].mode()[0])
 
-    elif city == "New York City":
+    elif city == "new york city":
         print(f"The most common month is: ", df2["month"].mode()[0])
         print(f"The most common day is: ", df2["day"].mode()[0])
         print(f"The most comon hour is: ", df2["Hour"].mode()[0])
 
-    elif city == "Washington":
+    elif city == "washington":
         print(f"The most common month is: ", df3["month"].mode()[0])
         print(f"The most common day is: ", df3["day"].mode()[0])
         print(f"The most comon hour is: ", df3["Hour"].mode()[0])
@@ -144,21 +144,21 @@ time_stats()
 def station_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
-        if city not in ("Chicago", "New York City", "Washington"):
+        if city not in ("chicago", "new york city", "washington"):
             print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
-    if city == "Chicago":
+    if city == "chicago":
         print(f"The most common start station is: ", df1["Start Station"].mode()[0])
         print(f"The most common end station is: ", df1["End Station"].mode()[0])
         print(f"The most frequent combination of start station and end station trip is: ", df1.groupby(["Start Station", "End Station"]).size().idxmax())
 
-    elif city == "New York City":
+    elif city == "new york city":
         print(f"The most common start station is: ", df2["Start Station"].mode()[0])
         print(f"The most common end station is: ", df2["End Station"].mode()[0])
         print(f"The most frequent combination of start station and end station trip is: ", df2.groupby(["Start Station", "End Station"]).size().idxmax())
 
-    elif city == "Washington":
+    elif city == "washington":
         print(f"The most common month is: ", df3["Start Station"].mode()[0])
         print(f"The most common day is: ", df3["End Station"].mode()[0])
         print(f"The most frequent combination of start station and end station trip is: ", df3.groupby(["Start Station", "End Station"]).size().idxmax())
@@ -169,11 +169,11 @@ station_stats()
 def trip_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
-        if city not in ("Chicago", "New York City", "Washington"):
+        if city not in ("chicago", "new york city", "washington"):
             print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
-    if city == "Chicago":
+    if city == "chicago":
         total_minutes = df1["Trip Duration"].sum()
         average_minute = df1["Trip Duration"].mean()
         # Get hours with floor division
@@ -191,7 +191,7 @@ def trip_stats():
         print("Total trip: ", time_string)
         print("Average trip: ", a_time_string)
 
-    elif city == "New York City":
+    elif city == "new york city":
         total_minutes = df2["Trip Duration"].sum()
         average_minute = df2["Trip Duration"].mean()
         # Get hours with floor division
@@ -209,7 +209,7 @@ def trip_stats():
         print("Total trip: ", time_string)
         print("Average trip: ", a_time_string)
 
-    elif city == "Washington":
+    elif city == "washington":
         total_minutes = df3["Trip Duration"].sum()
         average_minute = df3["Trip Duration"].mean()
         # Get hours with floor division
@@ -233,25 +233,25 @@ trip_stats()
 def user_stats():
     while True:
         city = str(input("Please enter the city name : ")).lower()
-        if city not in ("Chicago", "New York City", "Washington"):
+        if city not in ("chicago", "new york city", "washington"):
             print("Sorry, we only have three cities \n Chicago, New york city and Washington.")
         else:
             break
-    if city == "Chicago":
+    if city == "chicago":
         print(df1["User Type"].value_counts())
         print(df1["Gender"].value_counts())
         print("The earliest birth year is: ", df1["Birth Year"].min())
         print("The latest birth year is: ", df1["Birth Year"].max())
         print("The most common birth year is: ", df1["Birth Year"].mode()[0])
 
-    if city == "New York City":
+    if city == "new york city":
         print(df2["User Type"].value_counts())
         print(df2["Gender"].value_counts())
         print("The earliest birth year is: ", df2["Birth Year"].min())
         print("The latest birth year is: ", df2["Birth Year"].max())
         print("The most common birth year is: ", df2["Birth Year"].mode()[0])
 
-    if city == "Washington":
+    if city == "washington":
         print(df3["User Type"].value_counts())
         print(df3["Gender"].value_counts())
         print("The earliest birth year is: ", df3["Birth Year"].min())
